@@ -1,3 +1,9 @@
+
+var map_manager = {
+    "map" : null,
+    "map_items" : []
+}
+
 var map;
 function loadMapScenario() {
     map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
