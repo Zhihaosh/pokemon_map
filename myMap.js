@@ -41,7 +41,7 @@ function get_pokemon_layer_from_map_items(map_items) {
                                                  title: get_counter_down_time_from_expire_epoch(map_item['expire']) });
         pushpins.push(pushpin);
     }
-    layer.add(pushpin);
+    layer.add(pushpins);
     return layer;
 }
 function add_pokemon_layer() {
