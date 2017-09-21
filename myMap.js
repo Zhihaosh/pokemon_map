@@ -11,11 +11,9 @@ map_manager.map_items = [
       "latitude" : 40.7596651,
     }
 ]
-
-var map;
 function loadMapScenario() {
-    map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
-        credentials: 'AiapA0N7GG69bA5HrgU1nDW_6tNIO7eELxRVdgecgfF7mRVeGPsAqon929HNsYvh'
+    map_manager.map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+        credentials: 'AikCEUj_rGAWu8x2XBM0lIgs25BcQN7AVFa7vTvQbpsVSMbcdTZB_7XgZJlR0t6g'
     });
     add_pokemon_layer();
 }
@@ -46,9 +44,9 @@ function get_pokemon_layer_from_map_items(map_items) {
     layer.add(pushpin);
     return layer;
 }
-function add_pokemon_layer(){
+function add_pokemon_layer() {
     var pokemon_layer = get_pokemon_layer_from_map_items(map_manager.map_items)
-    map.layers.insert(pokemon_layer)
+    map_manager.map.layers.insert(pokemon_layer);
 }
 
 //3. Add pokemon counter down refresh
