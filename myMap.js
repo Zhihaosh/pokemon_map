@@ -11,11 +11,19 @@ function loadMapScenario() {
 map_manager.map_items = [
     {
       "pokemon_id" : 12,
-      "expire" : 1476589403,
+      "expire" : 1506021588,
       "longitude" : -73.9800345,
       "latitude" : 40.7596651,
     }
 ]
+function get_counter_down_time_from_expire_epoch(epoch){
+    var now_time = new Date().getTime()/1000;   
+    var time_left = epoch - now_time;
+    var sec = Math.floor(time_left % 60);
+    var min = Math.floor(time_left / 60);
+    return min + ":" + sec;
+}
+
 
 //2. Create pokemon image on map
 function get_pokemon_layer_from_map_items(map_items) {
