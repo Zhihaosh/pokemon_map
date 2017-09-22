@@ -78,6 +78,7 @@ function refresh_pokemon_data() {
         //This is where you would put an error callback
         console.log(result)
     });   
+}
     
 window.setInterval(refresh_pokemon_layer, 1000);
 window.setInterval(refresh_pokemon_data, 1000);
