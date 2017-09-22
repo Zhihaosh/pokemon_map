@@ -56,11 +56,14 @@ function refresh_pokemon_layer() {
   // Add new layer
   map_manager.map.layers.insert(pokemon_layer);
 }
-//4. Connect with REST API
-function refresh_pokemon_data() {
- var bounds = map_manager.map.getBounds();
- var apigClient = apigClientFactory.newClient();
 
+// 4. Connect with REST API
+function refresh_pokemon_data() {
+  // Get boundary of current map view
+  var bounds = map_manager.map.getBounds();
+  
+  // Request pokemons in current map view
+  var apigClient = apigClientFactory.newClient();
   var params = {
     north: bounds.getNorth(),
     south: bounds.getSouth(),
@@ -69,7 +72,7 @@ function refresh_pokemon_data() {
   };
   var body = { };
   var additionalParams = { };
-    
+ 
   apigClient.mapPokemonsGet(params, body, additionalParams)
     .then(function(result){
         //This is where you would put a success callback
@@ -79,9 +82,6 @@ function refresh_pokemon_data() {
         console.log(result)
     });   
 }
-    
-window.setInterval(refresh_pokemon_layer, 1000);
 window.setInterval(refresh_pokemon_data, 1000);
 
-
-                
+window.setInterval(refresh_pokemon_layer, 1000);
