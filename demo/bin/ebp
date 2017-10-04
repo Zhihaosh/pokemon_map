@@ -1,0 +1,10 @@
+#!/home/ubuntu/demo/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'awsebcli==3.10.6','console_scripts','ebp'
+__requires__ = 'awsebcli==3.10.6'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('awsebcli==3.10.6', 'console_scripts', 'ebp')()
+    )
